@@ -41,6 +41,8 @@ image: File
 date: Date
 description: String
 seller: String
+reply: Boolean
+responses: Post[]
 </panel_attributes>
     <additional_attributes/>
   </element>
