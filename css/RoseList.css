@@ -91,6 +91,29 @@ h1 span {
     /*height: 110px;*/
     /*width: 300px;*/
 }
+#posts{
+    display: block;
+}
+#posts div{
+    border: 2px solid black;
+    text-align: center;
+    display: block;
+    width: 33%;
+    overflow: scroll;
+    margin-left: 33%;
+    margin-right: 33%;
+    height: 200px;
+}
+#name {
+    text-align: center;
+    display: block;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+#posts div span{
+    float: right;
+    width: 40%;
+}
 
 
 
