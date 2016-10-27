@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "BebasNeue", sans-serif;
+    src: url(../BebasNeue.otf);
+}
+
+* {
+    font-family: "BebasNeue", sans-serif;
+}
+
+#logo {
+    display: block;
+    width: 120px;  
+    margin-left: auto;
+    margin-right: auto;     
+}
+
+h1 span {
+    color :maroon;
+}
+
+#largeContainer{
+    width:1500px;
+    display: inline-block;
+   /* margin-left: auto;
+    margin-right: auto;*/
+}
+
+#middle {    
+    /*float: middle;*/
+    text-align: center;
+    width: 600px;  
+    font-family: "BebasNeue", sans-serif;
+    margin-left: auto;
+    margin-right: auto;     
+}
+
+#middle input[type=text]{
+    width : auto;
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+
+}
+
+#middle select{
+    width : 109px;
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#middle input[type=submit]{
+    width : 50px;
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    text-align: center;
+}
+
+
+#recent {
+    float: left;
+    /*width: 200px;*/
+    width: 25%;   
+    font-size: 12px;
+    text-align: center;
+    
+}
+
+ p {
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px; 
+    float: left;
+    overflow: auto;
+}
+
+.firstWord{
+    font-weight: bold;
+}
+
+
+
+#recent div {
+    border: 2px solid  black;
+    text-align: center;
+    overflow: auto;
+    /*margin-bottom: 4px;*/   
+    /*height: 110px;*/
+    /*width: 300px;*/
+}
+
+
+
+#announcements{
+    float: right;
+    /*width: 200px;*/
+    width: 25%;   
+    font-size: 12px;
+    text-align: center;
+}
+
+#announcements div {
+    border: 2px solid  black;
+    text-align: center;
+    overflow: auto;
+    /*margin-bottom: 4px;*/   
+    /*height: 110px;*/
+    /*width: 300px;*/
+}
+
+img{
+    max-width: 60%;
+    /*padding: 5px 5px 5px 5px;*/
+    height: auto;
+    width: auto;
+    float: left;
+}
