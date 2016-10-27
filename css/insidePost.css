@@ -1,0 +1,81 @@
+h1 span{
+    color: #800000;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+h4{
+    display: inline;
+}
+
+#logButton{
+    position: absolute;
+    right: 0px;
+}
+
+#itemDiv{
+    display: flex;
+    margin-bottom: 70px;
+}
+
+#itemDiv div{
+    margin-left: 30px;
+}
+
+#itemDiv img{
+    margin-top: 20px;
+}
+
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#descriptionPara{
+    display: inline;
+}
+
+form{
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+}
+
+input{
+    font-size: 40px;
+}
+
+form > button{
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    
+}
+
+form > button:hover{
+    background-color: #45a049;
+}
+
+.comments{
+    border: 2px solid #800000;
+}
+
+#descriptionDiv{
+    width: 100%;
+}
+
+.byUser{
+    text-align: right;
+}
+

@@ -1,0 +1,27 @@
+h1 span{
+   color: #800000; 
+}
+
+h1{
+    text-align: center;
+}
+
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+button{
+    position: absolute;
+    right: 0px;
+    font-size: 20px;
+}
+
+#recentPostDiv{
+    background-color: #800000;
+}
+
+#recentPostDiv p{
+    color: white;
+}
