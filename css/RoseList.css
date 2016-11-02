@@ -91,9 +91,11 @@ h1 span {
     /*height: 110px;*/
     /*width: 300px;*/
 }
+
 #posts{
     display: block;
 }
+
 #posts div{
     border: 2px solid black;
     text-align: center;
