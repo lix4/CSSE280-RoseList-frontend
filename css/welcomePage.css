@@ -1,0 +1,51 @@
+h1 span{
+    color: #800000;
+    text-align: center
+}
+
+h1{
+    font-size: 120px; 
+    position: relative;
+    top: 30px;   
+}
+
+div{
+    background-color: rgba(192, 192, 192, 0.4);
+    text-align: center;
+    position: relative;
+    top: 130px;
+    left: 450px;
+    width: 40%;
+    height: 400px;
+}
+
+button{
+    background-color: #800000;
+    border-color: #800000;
+    width: 60%;
+    color: white;
+    height: 20%;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+button:hover{
+    background-color: #800030;
+    border-color: #800030;
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+}
