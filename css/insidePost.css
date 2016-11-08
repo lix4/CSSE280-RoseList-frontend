@@ -16,6 +16,13 @@ h4{
     display: inline;
 }
 
+#bigContainer{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%;
+}
+
 #logButton{
     position: absolute;
     right: 0px;
@@ -38,6 +45,7 @@ h4{
     position: absolute;
     top: 0px;
     right: 0px;
+    text-decoration: underline;
 }
 
 #descriptionPara{

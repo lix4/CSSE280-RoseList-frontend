@@ -1,61 +1,60 @@
 <!DOCTYPE <html>
 
 <head>
-    <title>
-        InsideAPost
-    </title>
-    <link rel="stylesheet" type="text/css" href="../css/insidePost.css">
+	<title>
+		InsideAPost
+	</title>
+	<link rel="stylesheet" type="text/css" href="../css/insidePost.css">
 
 </head>
-<p>Logged in as</p>
-<a href="" id="myAccount">My Account</a>
-<button type="button" id="logButton">Logout</button>
-<h1><span>Rose</span>List</h1>
-<a href="">Back to Category</a>
-
-<div>
-
-    <div id="itemDiv">
-        <img src="https://picturethismaths.files.wordpress.com/2016/03/fig6bigforblog.png?w=419&h=364" alt="item picture" height="100px"
-            width="100px">
-        <div id="descriptionDiv">
-            <h2>Rubik's Cube</h2>
-            <h4>Description:</h4>
-            <p id="descriptionPara">Rubik's Cube is a 3-D combination puzzle invented in 1974[1][2] by Hungarian sculptor and professor of architecture
-                Ernő Rubik. Originally called the Magic Cube,[3] the puzzle was licensed by Rubik to be sold by Ideal Toy
-                Corp. in 1980[4] via businessman Tibor Laczi and Seven Towns founder Tom Kremer,[5] and won the German Game
-                of the Year special award for Best Puzzle that year. As of January 2009, 350 million cubes had been sold
-                worldwide[6][7] making it the world's top-selling puzzle game.[8][9] It is widely considered to be the world's
-                best-selling toy.[10] In a classic Rubik's Cube, each of the six faces is covered by nine stickers, each
-                of one of six solid colours: white, red, blue, orange, green, and yellow. In currently sold models, white
-                is opposite yellow, blue is opposite green, and orange is opposite red, and the red, white and blue are arranged
-                in that order in a clockwise arrangement.[11] On early cubes, the position of the colours varied from cube
-                to cube.[12] An internal pivot mechanism enables each face to turn independently, thus mixing up the colours.
-                For the puzzle to be solved, each face must be returned to have only one colour. Similar puzzles have now
-                been produced with various numbers of sides, dimensions, and stickers, not all of them by Rubik.</p>
-        </div>
-    </div>
-
-    <div class="comments"
-        <img src="" alt="">
-        <p>This is the first comment.</p>
-        <p class="byUser">By User:</p>
-    </div>
-    <div class="comments">
-        <img src="" alt="">
-        <p>This is the second comment</p>
-        <p class="byUser">By User:</p>
-    </div>
-
-    <form>
-        <input type="text" name="response" placeholder="You comment here...">
-        <button type="button">Reply</button>
-    </form>
-
-</div>
 
 <body>
+	<p>Logged in as</p>
+	<p id="myAccount">My Account</p>
+	<button type="button" id="logButton">Logout</button>
+	<h1><span>Rose</span>List</h1>
+	<a>Back to Category</a>
 
+	<div id="bigContainer">
+
+		<div id="itemDiv">
+			<img src="https://picturethismaths.files.wordpress.com/2016/03/fig6bigforblog.png?w=419&h=364" alt="item picture" height="100px"
+				width="100px">
+			<div id="descriptionDiv">
+				<h2>Rubik's Cube</h2>
+				<h4>Description:</h4>
+				<p id="descriptionPara">Rubik's Cube is a 3-D combination puzzle invented in 1974[1][2] by Hungarian sculptor and professor of architecture Ernő
+					Rubik. Originally called the Magic Cube,[3] the puzzle was licensed by Rubik to be sold by Ideal Toy Corp. in 1980[4]
+					via businessman Tibor Laczi and Seven Towns founder Tom Kremer,[5] and won the German Game of the Year special award
+					for Best Puzzle that year. As of January 2009, 350 million cubes had been sold worldwide[6][7] making it the world's
+					top-selling puzzle game.[8][9] It is widely considered to be the world's best-selling toy.[10] In a classic Rubik's
+					Cube, each of the six faces is covered by nine stickers, each of one of six solid colours: white, red, blue, orange,
+					green, and yellow. In currently sold models, white is opposite yellow, blue is opposite green, and orange is opposite
+					red, and the red, white and blue are arranged in that order in a clockwise arrangement.[11] On early cubes, the position
+					of the colours varied from cube to cube.[12] An internal pivot mechanism enables each face to turn independently, thus
+					mixing up the colours. For the puzzle to be solved, each face must be returned to have only one colour. Similar puzzles
+					have now been produced with various numbers of sides, dimensions, and stickers, not all of them by Rubik.</p>
+			</div>
+		</div>
+
+		<div class="comments" <img src="" alt="">
+			<p>This is the first comment.</p>
+			<p class="byUser">By User:</p>
+		</div>
+		<div class="comments">
+			<img src="" alt="">
+			<p>This is the second comment</p>
+			<p class="byUser">By User:</p>
+		</div>
+		<form id="replyForm">
+			<input type="text" name="response" placeholder="You comment here..." id="response">
+			<button type="button" name="reply">Reply</button>
+		</form>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../JavaScript/insidePostJS.js"></script>
 </body>
 
 </html>
