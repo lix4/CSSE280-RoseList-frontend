@@ -15,6 +15,9 @@
          $('h1:first').click(function () {
             window.location.href = 'index.html';
         });
+        $('#myAccount').click(function () {
+            window.location.href = 'accountPage.html';
+        });
     }
 
 

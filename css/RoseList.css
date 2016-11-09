@@ -13,6 +13,11 @@
     margin-left: auto;
     margin-right: auto;     
 }
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
 h1 span {
     color :maroon;

@@ -6,6 +6,11 @@
 * {
     font-family: "BebasNeue", sans-serif;
 }
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
 #logo {
     display: block;
