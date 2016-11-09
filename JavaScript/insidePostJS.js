@@ -1,7 +1,6 @@
 (function () {
     var comment, replyButton;
 
-
     function setupLinksForButtons() {
         $('#myAccount').click(function () {
             console.log("aa");
@@ -9,6 +8,12 @@
         });
          $('#logo').click(function () {
             window.location.href = 'index.html';
+        });
+        $('#back').click(function () {
+            window.location.href = 'specificCategory.html';
+        });
+        $('#myAccount').click(function () {
+            window.location.href = 'accountPage.html';
         });
     }
 
