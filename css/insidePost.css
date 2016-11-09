@@ -11,6 +11,11 @@ h2{
     text-align: center;
     margin-bottom: 0px;
 }
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
 h4{
     display: inline;
