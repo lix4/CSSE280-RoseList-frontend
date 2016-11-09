@@ -39,6 +39,9 @@
         $('button[name|=CategoryButton]').each($('button[name|=CategoryButton]').click(function () {
             window.location.href = "specificCategory.html";
         }));
+        $('h1:first').click(function () {
+            window.location.href = 'index.html';
+        });
     }
 
 

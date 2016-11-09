@@ -11,6 +11,9 @@ function setup(){
         userInput = $("#search").val();
         getPosts();
     });
+     $('h1:first').click(function () {
+            window.location.href = 'index.html';
+        });
 }
 
 
