@@ -36,7 +36,7 @@
     }
 
     function setupLinksForButtons() {
-        $('button[name|=CategoryButton]').each($('button[name|=CategoryButton]').click(function () {
+        $('input[type|=button]').each($('input[type|=button]').click(function () {
             window.location.href = "specificCategory.html";
         }));
     }
