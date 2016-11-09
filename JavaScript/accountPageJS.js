@@ -4,7 +4,7 @@
         $('#myAccount').click(function () {
             window.location.href = 'accountPage.html';
         });
-         $('h1:first').click(function () {
+         $('#logo').click(function () {
             window.location.href = 'index.html';
         });
     }

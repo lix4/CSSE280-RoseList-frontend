@@ -36,9 +36,9 @@
     }
 
     function setupLinksForCategories() {
-        $('h2').each($('h2').click(function () {
-            window.location.href = "specificCategory.html";
-        }));
+        // $('h2').each($('h2').click(function () {
+        //     window.location.href = "specificCategory.html";
+        // }));
          $('h1:first').click(function () {
             window.location.href = 'index.html';
         });
