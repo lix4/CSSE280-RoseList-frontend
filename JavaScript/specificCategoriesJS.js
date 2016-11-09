@@ -12,6 +12,9 @@
             console.log ("ahdfds");
             window.location.href = "insidePost.html";
         }));
+         $('h1:first').click(function () {
+            window.location.href = 'index.html';
+        });
     }
 
 
