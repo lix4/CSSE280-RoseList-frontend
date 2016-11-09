@@ -6,6 +6,11 @@
 * {
     font-family: "BebasNeue", sans-serif;
 }
+#myAccount{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
 #logo {
     display: block;
@@ -13,21 +18,43 @@
     margin-left: auto;
     margin-right: auto;     
 }
-#myAccount{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
 
 h1 span {
     color :maroon;
 }
 
+table{
+    text-align: center;
+    border: 3px solid #800000;
+    position: relative;
+    left: 110px;
+    top: 100px;
+}
+
+table button{
+    width: 200px;
+    height: 50px;
+    color:white;
+    background-color: #800000;
+    border: 1px solid #800000;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+
 #largeContainer{
-    width:1500px;
+    width:1600px;
     display: inline-block;
-   /* margin-left: auto;
-    margin-right: auto;*/
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%;
 }
 
 #middle {    
@@ -57,25 +84,32 @@ h1 span {
 }
 
 #middle input[type=submit]{
-    width : 50px;
     padding-right: 0px;
     margin-right: 0px;
     padding-left: 0px;
     margin-left: 0px;
     text-align: center;
+    background-color: #800000;
+    color: white;
+    border: 2px solid #800000;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 100px;
+    cursor: pointer;
 }
 
 
 #recent {
     float: left;
-    /*width: 200px;*/
-    width: 25%;   
+    width: 375px;  
     font-size: 12px;
     text-align: center;
-    
+    border: 3px solid #800000;
+    position: relative;
+    top: 60px;
 }
 
- p {
+p {
     padding: 0px 5px 0px 5px;
     margin: 0px 0px 0px 0px; 
     float: left;
@@ -111,25 +145,34 @@ h1 span {
     margin-right: 33%;
     height: 200px;
 }
+
 #name {
     text-align: center;
     display: block;
     margin-left: 33%;
     margin-right: 33%;
 }
+
 #posts div span{
     float: right;
     width: 40%;
 }
 
+#middle{
+    background-color: grey;
+    text-align: center;
+    height: 40px;
 
+}
 
 #announcements{
     float: right;
-    /*width: 200px;*/
-    width: 25%;   
+    width: 375px;
     font-size: 12px;
     text-align: center;
+    border: 3px solid #800000;
+    position: relative;
+    top: 60px;
 }
 
 #announcements div {
@@ -147,4 +190,25 @@ img{
     height: auto;
     width: auto;
     float: left;
+}
+
+.divs{
+    float: left;
+}
+
+select{
+    background-color: #800000;
+    border: 2px solid #800000;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+input[type=text], select{
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+         height: 30px;
+         align-items: baseline;
+    margin-top: 5px;
 }

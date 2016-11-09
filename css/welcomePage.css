@@ -13,7 +13,7 @@ div{
     background-color: rgba(192, 192, 192, 0.4);
     text-align: center;
     position: relative;
-    top: 130px;
+    top: 110px;
     left: 450px;
     width: 40%;
     height: 400px;
@@ -27,6 +27,8 @@ button{
     height: 20%;
     font-size: 30px;
     border-radius: 20px;
+    cursor: pointer;
+    outline: none;
 }
 
 button:hover{

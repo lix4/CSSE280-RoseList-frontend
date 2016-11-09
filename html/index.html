@@ -2,17 +2,29 @@
 
 <head>
 	<title>RoseList</title>
-	<link rel="stylesheet" type="text/css" href="../css/RoseList.css" />
+	<link rel="stylesheet" type="text/css" href="../css/indexPage.css" />
 </head>
 
 <body>
-	<video playsinline autoplay muted loop id="bgvid">
-			<source src="This is Rose-Hulman.mp4" type="video/mp4">
-	</video>
+
 	<div id="logo">
 		<h1><span>Rose</span>List</h1>
 	</div>
-	<div id="largeContainer">
+	<button id="myAccount">My Account</button>
+	<div id="middle">
+		<form>
+			<input type="text" name="search" placeholder="Search...">
+			<select name="categories">
+				<option value="buying">Buying</option>
+				<option value="selling">Selling</option>
+				<option value="rides">Rides</option>
+				<option value="announcements">Announcments</option>
+				<option value="other">Other</option>
+			</select>
+			<input type="submit" name="Submit">
+		</form>
+	</div>
+	<div id="largeContainer" class="divs">
 		<div id="recent">
 			<h2>Recent Posts</h2>
 			<div id="testRecent1">
@@ -48,20 +60,27 @@
 				</div>
 			</div>
 		</div>
-		<div id="middle">
-			<form>
-				<input type="text" name="search" placeholder="Search...">
-				<select name="categories">
-				<option value="buying">Buying</option>
-				<option value="selling">Selling</option>
-				<option value="rides">Rides</option>
-				<option value="announcements">Announcments</option>
-				<option value="other">Other</option>
-			</select>
-				<input type="submit" name="Submit">
-			</form>
-		</div>
-		<div id="announcements">
+		<table class="divs">
+			<tr>
+				<td><a href="categories.html">Browse by Category</a></td>
+			</tr>
+			<tr>
+				<td><button type="button" name="CategoryButton">Buying</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" name="CategoryButton">Selling</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" name="CategoryButton">Rides</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" name="CategoryButton">Announcments</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" name="CategoryButton">Other</button></td>
+			</tr>
+		</table>
+		<div id="announcements" class="divs">
 			<h2>Announcments</h2>
 			<div id="testRecent1">
 				<img src="../Project_Mockups_and_Images/Buying.png">
@@ -98,7 +117,8 @@
 		</div>
 	</div>
 
-	<script language="JavaScript" src="../JavaScript/RecentPostAndAnouce.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script language="JavaScript" src="../JavaScript/indexPageJS.js"></script>
 </body>
 
 </html>
