@@ -1,51 +1,57 @@
-var searchType;
-var userInput;
-var backend = null;
-var apiUrl;
+(function () {
+    "use strict";
+    var submitButton;
+    var searchType;
+    var userInput;
+    var backend = null;
+    var apiUrl = "http://localhost:3000/posts";
 
-//A lot of the details of this code will have to be filled in or changed depending 
-//on the details of the database, and several tags will need to be added to the search page.
-function setup(){
-    $("#search").on('submit', function(){
-        searchType = $("#categories").getFormData();
-        userInput = $("#search").val();
-        getPosts();
-    });
-     $('h1:first').click(function () {
-            window.location.href = 'index.html';
-        });
-}
-
-
-
-function getPosts() {
+    var getPosts = function () {
+        var inputData = {
+            name: userInput.replace(/ /g, "+"),
+            category: searchType
+        };
         $.ajax({
             url: apiUrl,
-            type: 'GET',
-            dataType: 'JSON',
+            type: "GET",
+            data: inputData,
             success: function (data) {
+                data = data.filter(function getMyPost(obj) {
+                    return userInput === obj.name;
+                });
+                console.log(data);
+                console.log(userInput);
+                data = data[0];
                 if (data) {
-                    posts = data;
-                    displayPosts(posts);
+                    console.log(data.name);
+                    displayPosts(data);
                 } else {
                     console.log("Posts not Found");
                 }
             },
-            error: function (request, status, error) {
+            fail: function (request, status, error) {
                 console.log(error, status, request);
             }
         });
-    }
+    };
 
 
-function displayPosts(posts) {
-        postsDisplayLocation = $("table.table-bordered>tbody").empty();
-        posts.forEach(function (post) {
-            var $postRow = $('<tr>').attr('data-contactid', contact._id);
-            $postRow.append(
-               //Data will go here.
-            );
-            // append row with the post to DOM tree
-            postsDisplayLocation.append($postRow);
-        });
+    function displayPosts(post) {
+        console.log(post.name);
+        sessionStorage.setItem("name", post.name);
+        sessionStorage.setItem("price", post.price);
+        sessionStorage.setItem("description", post.info);
+        window.location.href = 'searchPage.html';
     }
+
+    function getFormData() {
+        searchType = $("[name=categories] option:selected").val();
+        userInput = $("[name=search]").val();
+        getPosts();
+    }
+
+    $(document).ready(function () {
+        submitButton = $("#middle button").on('click', getFormData);
+    });
+
+})();
