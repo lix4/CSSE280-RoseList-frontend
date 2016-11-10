@@ -64,16 +64,40 @@ form{
 }
 
 input{
-    font-size: 40px;
+    font-size: 20px;
+}
+
+button{
+    background-color: #800000;
+    border-color: #800000;
+    width: 100px;
+    color: white;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+#back{
+    background-color: #800000;
+    border-color: #800000;
+    width: 200px;
+    color: white;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
 }
 
 form > button{
-    background-color: green;
+    background-color: #800000;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 40px;
-    
+    height: 30px;
+    font-size: 20px;
 }
 
 form > button:hover{

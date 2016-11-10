@@ -21,23 +21,8 @@ h1 span {
     top: 60px;
 }
 
-#announcements{
-    float: right;
-    width: 375px;
-    font-size: 12px;
-    text-align: center;
-    border: 3px solid #800000;
-    position: relative;
-    top: 60px;
-}
-
-/*#announcements {
-    width: 15%;
-    float: right;
-}*/
-
 #largeContainer{
-    width:1600px;
+    /*width:1600px;*/
     display: inline-block;
     width: 80%;
     position: relative;
@@ -51,13 +36,15 @@ h1 span {
     position: relative;
     left: 110px;
     top: 100px;
+    position: initial;
 }
 
 #content {
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding-left: 5%;
     padding-right: 5%;
+    border-radius: 30px;
 }
 
 #header {
