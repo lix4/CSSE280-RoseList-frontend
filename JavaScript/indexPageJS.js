@@ -44,6 +44,9 @@
         });
         $('#myAccount').click(function () {
             window.location.href = 'accountPage.html';
+
+        $('#makePost').click(function () {
+            window.location.href = "makePost.html";
         });
     }
 

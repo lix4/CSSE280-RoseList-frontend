@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+</html>
+
+<head>
+  <title>Make a Post</title>
+	<link rel="stylesheet" type="text/css" href="../css/makePost.css">
+</head>
+
+<body>
+
+  <form class="post-search" id="make-post-form">
+    <div id="bigcontainer">
+      <div id="logo">
+        <h1><span>Rose</span>List</h1>
+      </div>
+      <fieldset>
+        <legend>Make Post</legend>
+
+        <label for="t">Post Title:</label><br />
+        <input type="text" name="t" id="t"> <br />
+
+        <label for="d">Description:</label><br />
+        <input type="text" name="d" id="d"> <br />
+
+        <label for="p">Price:</label><br />
+        <input type="text" name="p" id="p"> <br />
+
+        <label for="categories">Category:</label>
+        <select name="categories">
+				<option value="buying">Buying</option>
+				<option value="selling">Selling</option>
+				<option value="rides">Rides</option>
+				<option value="announcements">Announcments</option>
+				<option value="other">Other</option>
+    </select>
+
+        <label for="type">Type:</label>
+        <select name="type">
+				<option value="item">Item</option>
+				<option value="service">Service</option>
+    </select> <br />
+
+        <p>
+          <button type="button" id="submit-button">Submit Post</button>
+          <button type="reset" id="reset">Reset</button>
+          <button type="button" id="cancel">Cancel</button>
+        </p>
+
+      </fieldset>
+
+    </div>
+    <script src="../JavaScript/jquery-3.1.1.js"></script>
+    <script src="../JavaScript/makePost.js"></script>
+  </form>
+
+</body>
+
+</html>

@@ -204,7 +204,7 @@ select{
     font-size: 20px;
 }
 
-input[type=text], select{
+input[type=text], select, #makePost{
      border: 1px solid #ccc;
      border-radius: 4px;
      box-sizing: border-box;
