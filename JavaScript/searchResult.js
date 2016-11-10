@@ -7,8 +7,6 @@
         var price = sessionStorage.getItem("price");
         var description = sessionStorage.getItem("description");
         $('#resultTable').append('<tr><td>' + name + '</td><td>' + price + '</td><td>' + description + '</td></tr>');
-
-        console.log("asdasdA");
     }
 
 
