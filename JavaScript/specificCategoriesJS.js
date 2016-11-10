@@ -1,7 +1,6 @@
 (function () {
     var mRecentPostsDiv;
 
-
     function setup() {
         mRecentPostsDiv = document.getElementById("recent");
         // displayCategoryNameFromForm();
@@ -14,7 +13,7 @@
             console.log("ahdfds");
             window.location.href = "insidePost.html";
         }));
-         $('h1:first').click(function () {
+        $('h1:first').click(function () {
             window.location.href = 'index.html';
         });
         $('#myAccount').click(function () {
