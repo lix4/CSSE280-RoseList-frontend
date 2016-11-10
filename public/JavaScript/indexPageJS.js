@@ -1,7 +1,7 @@
 (function () {
     var mRecentPostsDiv;
     var AllPosts;
-    var apiUrl = "http://localhost:3000/posts"
+    var apiUrl = "https://roselist-backend-test.herokuapp.com/posts"
     var postNum = 0;
     var announcements = 0;
 

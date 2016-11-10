@@ -4,7 +4,7 @@
     var searchType;
     var userInput;
     var backend = null;
-    var apiUrl = "http://localhost:3000/posts";
+    var apiUrl = "https://roselist-backend-test.herokuapp.com/posts";
 
     var getPosts = function () {
         var inputData = {

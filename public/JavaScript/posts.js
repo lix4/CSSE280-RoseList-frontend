@@ -4,7 +4,7 @@
     var submit, reset;
     var titl, descriptio, pric, categor, typ;
 
-    var apiURL = "http://localhost:3000/posts"
+    var apiURL = "https://roselist-backend-test.herokuapp.com/posts"
     var postData = function () {
         var inputData = {
             type: typ,

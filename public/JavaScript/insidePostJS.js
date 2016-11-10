@@ -1,6 +1,6 @@
 (function() {
     var comment, replyButton, commentData, post = {};
-    var apiURL = "http://localhost:3000/posts/"
+    var apiURL = "https://roselist-backend-test.herokuapp.com/posts/"
 
 
     function setupLinksForButtons() {
