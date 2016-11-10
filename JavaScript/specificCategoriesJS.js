@@ -3,7 +3,9 @@
 
     function setup() {
         mRecentPostsDiv = document.getElementById("recent");
+        // displayCategoryNameFromForm();
         setupLinksForSpecificCategories();
+
     }
 
     function setupLinksForSpecificCategories() {
@@ -18,6 +20,8 @@
             window.location.href = 'accountPage.html';
         });
     }
+
+
 
     window.onload = setup;
 })();

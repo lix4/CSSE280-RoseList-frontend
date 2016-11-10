@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
 	<div id="logo">
 		<h1><span>Rose</span>List</h1>
 	</div>
@@ -21,20 +20,13 @@
 				<option value="announcements">Announcments</option>
 				<option value="other">Other</option>
 			</select>
-			<button type="button" name="Submit">Submit</button>
+			<input type="submit" name="Submit">
+			<button type="button" id="makePost">Make Post</button>
 		</form>
 	</div>
 	<div id="largeContainer" class="divs">
 		<div id="recent">
 			<h2>Recent Posts</h2>
-			<div id="testRecent1">
-				<img src="../Project_Mockups_and_Images/Buying.png">
-				<div>
-					<p><span class="firstWord">Item:</span> Stuff</p> <br />
-					<p><span class="firstWord">Price:</span> $$$$</p> <br />
-					<p><span class="firstWord">Seller:</span> Naafs</p>
-				</div>
-			</div>
 			<div id="testRecent2">
 				<img src="../Project_Mockups_and_Images/Buying.png">
 				<div>
@@ -65,19 +57,40 @@
 				<td><a href="categories.html">Browse by Category</a></td>
 			</tr>
 			<tr>
-				<td><button type="button" name="CategoryButton">Buying</button></td>
+				<td>
+					<form action="specificCategory.html" method="GET">
+						<input type="hidden" name="Buying" value="Buying" />
+						<input type="button" name="Buying" value="Buying" />
+					</form>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" name="CategoryButton">Selling</button></td>
+				<td>
+					<form action="specificCategory.html" method="GET">
+						<input type="button" name="Selling" value="Selling">
+					</form>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" name="CategoryButton">Rides</button></td>
+				<td>
+					<form action="specificCategory.html" method="GET">
+						<input type="button" name="Rides" value="Rides">
+					</form>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" name="CategoryButton">Announcments</button></td>
+				<td>
+					<form action="specificCategory.html" method="GET">
+						<input type="button" name="Announcments" value="Announcments">
+					</form>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" name="CategoryButton">Other</button></td>
+				<td>
+					<form action="specificCategory.html" method="GET">
+						<input type="button" name="Other" value="Other">
+					</form>
+				</td>
 			</tr>
 		</table>
 		<div id="announcements" class="divs">
@@ -117,7 +130,7 @@
 		</div>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../JavaScript/jquery-3.1.1.js"></script>
 	<script language="JavaScript" src="../JavaScript/indexPageJS.js"></script>
 	<script src="../JavaScript/search.js"></script>
 </body>

@@ -8,7 +8,8 @@
     }
 
     function setupLinksForCategories() {
-         $('h2').each($('h2').click(function () {
+
+        $('button').each($('button').click(function () {
             window.location.href = "specificCategory.html";
          }));
          $('h1:first').click(function () {
