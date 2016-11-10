@@ -1,92 +1,103 @@
-(function () {
-    var comment, replyButton;
-    var typ, categor, descripio, titl, pric, respons;
-    var inputData = {
-        type: typ,
-        category: categor,
-        info: descripio,
-        name: titl,
-        price: pric,
-    };
+(function() {
+    var comment, replyButton, commentData, post = {};
+    var apiURL = "http://localhost:3000/posts/"
+
 
     function setupLinksForButtons() {
-        $('#myAccount').click(function () {
+        $('#myAccount').click(function() {
             console.log("aa");
             window.location.href = "accountPage.html";
         });
-        $('#logo').click(function () {
-            window.location.href = 'index.html';
-        });
-        $('#back').click(function () {
-            window.location.href = 'specificCategory.html';
-        });
-        $('#myAccount').click(function () {
-            window.location.href = 'accountPage.html';
+        $('#reply').click(function(e){
+            e.preventDefault();
+            getComment();
         });
     }
 
-    function displayOnePost(post) {
-        var info = post.description;
-        console.log(info);
-        var name = post.description;
-        $('#h2').text(name);
-        $('#descriptionPara').text(info);
-    }
 
-    //This function gets comment entered by the user from the input.
     function getComment() {
         comment = $('#response').val();
         if (!comment) {
             alert("The comment cannot be blank!");
         } else {
-            $('<div class="comments"><img src="" alt=""><p>' + comment + '</p><p class="byUser">By User:</p></div>').insertBefore('#replyForm');
             $.ajax({
-                url: "http://localhost:3000/posts",
-                type: "POST",
-                data: inputData,
-                success: function (data) {
-                    data.responses.push(comment);
+                url: apiURL + JSON.parse(sessionStorage.getItem("postToStore")),
+                type: "GET",
+                success: function(data) {
+                    post = data;
+                    addComment(post);
                 },
-                fail: function (request, status, error) {
+                fail: function(request, status, error) {
                     console.log(error, status, request);
                 }
             });
         }
     }
 
-    // function loadPostData(postID) {
-    //     $.ajax({
-    //         url: "http://localhost:3000/posts/" + postID,
-    //         type: "GET",
-    //         data: inputData,
-    //         success: function (data) {
-    //             console.log("data" + data);
-    //             displayOnePost(data);
-    //             var responsesArray = data.responses;
-    //             console.log(responsesArray);
-    //             displayResponses(responsesArray);
-    //         },
-    //         fail: function (request, status, error) {
-    //             console.log(error, status, request);
-    //         }
-    //     });
-    // }
+    function addComment(post) {
+        post.responses.push($('#response').val());
+        var inputData = {
+            responses: post.responses
+        };
+        $.ajax({
+            url: apiURL + JSON.parse(sessionStorage.getItem("postToStore")),
+            type: "PUT",
+            dataType: 'JSON',
+            data: inputData,
+            success: function(data) {
+                if (data._id) {
+                    window.location.href = "insidePost.html"
+                    return;
+                } else {
+                    console.log("NO POST!");
+                }
+            },
+            fail: function(request, status, error) {
+                console.log(error, status, request);
+            }
+        });
 
-    // function displayResponses(responses) {
-    //     for (var i = 0; i < responses.length; i++) {
-    //         displayResponse(responses[i]);
-    //     }
-    // }
+    }
 
-    // function displayResponse(response) {
-        // $('<div class="comments"><img src="" alt=""><p>' + response + '</p><p class="byUser">By User:</p></div>').insertBefore('#replyForm');
-    // }
 
-    $(document).ready(function () {
+    function loadPost() {
+        var descDiv = $('#descriptionDiv');
+        $.ajax({
+            url: apiURL + JSON.parse(sessionStorage.getItem('postToStore')),
+            type: "GET",
+            success: function(data) {
+                if (data._id) {
+                    post = data;
+                    displayPost();
+                } else {
+                    console.log("NO MOVIE!");
+                }
+            },
+            fail: function(request, status, error) {
+                console.log(error, status, request);
+            }
+        })
+
+    }
+
+
+    function displayPost() {
+        $('#info').append('<p> <span>Description:</span> ' + post.info + '</p>');
+        // $('<div class="comments"><img src="" alt=""><p>' + comment + '</p><p class="byUser">By User:</p></div>').insertBefore('#replyForm');
+    }
+
+
+    $(document).ready(function() {
         // load in initial state
-        replyButton = $("[name|=reply]").on('click', getComment);
+        $('#logo').on('click', function() {
+            window.location.href = "index.html";
+            return;
+        });
+        $('[name="home"]').click(function() {
+            window.location.href = "index.html";
+        })
         setupLinksForButtons();
-        loadPostData();
+        loadPost();
     });
 
 })();

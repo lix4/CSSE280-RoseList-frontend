@@ -2,38 +2,23 @@
 
 <head>
 	<title>
-		InsideAPost
+		RoseList
 	</title>
 	<link rel="stylesheet" type="text/css" href="../css/insidePost.css">
 
 </head>
 
 <body>
-	<p>Logged in as</p>
-	<button id="myAccount"> My Account</button>
-	<button type="button" id="logButton">Logout</button>
 
-	<h1><span>Rose</span>List</h1>
-	<button id="back">Back to Category</button>
+	<h1 id="logo"><span>Rose</span>List</h1>
+	<button type="button" name="home">Return Home</button>
 
 	<div id="bigContainer">
+
 		<div id="itemDiv">
-			<img src="https://picturethismaths.files.wordpress.com/2016/03/fig6bigforblog.png?w=419&h=364" alt="item picture" height="100px"
-				width="100px">
-			<div id="descriptionDiv">
-				<h2>Rubik's Cube</h2>
-				<h4>Description:</h4>
-				<p id="descriptionPara">Rubik's Cube is a 3-D combination puzzle invented in 1974[1][2] by Hungarian sculptor and professor of architecture Ernő
-					Rubik. Originally called the Magic Cube,[3] the puzzle was licensed by Rubik to be sold by Ideal Toy Corp. in 1980[4]
-					via businessman Tibor Laczi and Seven Towns founder Tom Kremer,[5] and won the German Game of the Year special award
-					for Best Puzzle that year. As of January 2009, 350 million cubes had been sold worldwide[6][7] making it the world's
-					top-selling puzzle game.[8][9] It is widely considered to be the world's best-selling toy.[10] In a classic Rubik's
-					Cube, each of the six faces is covered by nine stickers, each of one of six solid colours: white, red, blue, orange,
-					green, and yellow. In currently sold models, white is opposite yellow, blue is opposite green, and orange is opposite
-					red, and the red, white and blue are arranged in that order in a clockwise arrangement.[11] On early cubes, the position
-					of the colours varied from cube to cube.[12] An internal pivot mechanism enables each face to turn independently, thus
-					mixing up the colours. For the puzzle to be solved, each face must be returned to have only one colour. Similar puzzles
-					have now been produced with various numbers of sides, dimensions, and stickers, not all of them by Rubik.</p>
+			<div id="description">
+				<div id="info">
+				</div>
 			</div>
 		</div>
 
@@ -47,8 +32,11 @@
 			<p class="byUser">By User:</p>
 		</div>
 		<form id="replyForm">
-			<input type="text" name="response" placeholder="You comment here..." id="response">
-			<button type="button" name="reply">Reply</button>
+			<label for="response">Comment:</label> <br />
+			<input type="text" name="response" placeholder="Your comment here..." id="response"><br />
+			<label for="contact">Contact Info:</label><br />
+			<input type="text" name="contact" placeholder="contact@contact.com" id="contact"> <br />
+			<button type="button" name="reply" id="reply">Reply</button>
 		</form>
 
 	</div>

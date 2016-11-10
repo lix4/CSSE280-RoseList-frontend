@@ -15,15 +15,7 @@ h1{
 button{
     position: absolute;
     right: 0px;
-    background-color: #800000;
-    border-color: #800000;
-    width: 100px;
-    color: white;
-    height: 20px;
-    font-size: 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    outline: none;
+    font-size: 20px;
 }
 
 #recentPostDiv{
@@ -32,10 +24,4 @@ button{
 
 #recentPostDiv p{
     color: white;
-}
-
-#bigContainer{
-    width: 50%;
-    margin: auto;
-    position: initial;
 }

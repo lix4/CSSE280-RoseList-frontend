@@ -39,6 +39,8 @@
         sessionStorage.setItem("name", post.name);
         sessionStorage.setItem("price", post.price);
         sessionStorage.setItem("description", post.info);
+        sessionStorage.setItem('seller', post.userName);
+        sessionStorage.setItem("id", JSON.stringify(post._id));
         window.location.href = 'searchPage.html';
     }
 
@@ -49,7 +51,7 @@
     }
 
     $(document).ready(function () {
-        submitButton = $("#middle button").on('click', getFormData);
+        submitButton = $("#submit").on('click', getFormData);
     });
 
 })();

@@ -1,56 +1,140 @@
 (function () {
     var mRecentPostsDiv;
+    var AllPosts;
+    var apiUrl = "http://localhost:3000/posts"
+    var postNum = 0;
+    var announcements = 0;
+
+
+
+    function postClickHandler(post) {
+        var error = false;
+        function postWithId(thispost) {
+            return thispost._id === post._id;
+        }
+        var postToStore = AllPosts.filter(postWithId)[0];
+        try {
+            var postToStoreString = JSON.stringify(postToStore._id);
+            sessionStorage.removeItem('postToStore');
+            sessionStorage.setItem("postToStore", postToStoreString);
+        } catch (e) {
+            alert("Error when writing to Session Storage " + e);
+            error = true;
+        }
+        if (!error) {
+            window.location = "insidePost.html";
+        }
+    }
+    function displayPosts(posts) {
+        var postsDisplayLocation = $("#recentPosts").empty();
+        var jsId, currentPostDiv;
+        //console.log(posts);
+        for (let i = 0; i < posts.length; i++) {
+            if (postNum === 5 || posts[i] == undefined)
+                break;
+            jsId = "post-" + posts[i]._id;
+            if (!(posts[i].category === "announcements")) {
+                currentPostDiv = $("<div>").addClass("post").attr("id", jsId);
+                currentPostDiv.append(
+                    '<div class="post">' + '<h3>' + posts[i].name + '</h3>' +
+                    '<p> <span class="first">Price:</span> ' + (posts[i].price || 0) + '</p> <br />' +
+                    '<p> <span class="first">Seller:</span> ' + posts[i].email + '</p> <br />' +
+                    '<p> <span class="first">Description:</span> ' + posts[i].info + '</p> ' +
+                    '</div>' +
+                    '<div class="clear"></div>'
+                );
+                postsDisplayLocation.append(currentPostDiv);
+                currentPostDiv.click(function () {
+                    postClickHandler(posts[i]);
+                });
+                postNum++;
+            }
+
+        }
+        postsDisplayLocation = $("#recentAnnouncements").empty();
+        for (let i = 0; i < posts.length; i++) {
+            if (announcements === 5 || posts[i] == undefined)
+                break;
+            jsId = "post-" + posts[i]._id;
+            if (posts[i].category === "announcements") {
+                currentPostDiv = $("<div>").addClass("post").attr("id", jsId);
+                currentPostDiv.append(
+                    '<div class="post">' + '<h3>' + posts[i].name + '</h3>' +
+                    '<p> <span class="first">Announcer:</span> ' + posts[i].userName + '</p> <br />' +
+                    '<p> <span class="first">Description:</span> ' + posts[i].info + '</p> ' +
+                    '</div>' +
+                    '<div class="clear"></div>'
+                );
+                postsDisplayLocation.append(currentPostDiv);
+                currentPostDiv.click(function () {
+                    postClickHandler(posts[i]);
+                });
+                announcements++;
+            }
+
+        }
+    }
 
 
     function setup() {
-        mRecentPostsDiv = document.getElementById("recent");
-        getOneRecentPostOrAnnouncements("Laptop", "12", "Phillee", "../Project_Mockups_and_Images/Buying.png");
-        setupLinksForButtons();
-    }
-
-    function getOneRecentPostOrAnnouncements(itemName, itemPrice, itemSeller, imgUrl) {
-        var mOneRecentPostDiv = document.createElement("div");
-        mOneRecentPostDiv.style.border = "2px solid black";
-        mOneRecentPostDiv.style.textAlign = "center";
-        mOneRecentPostDiv.style.overflow = "auto";
-        var mImage = document.createElement("img");
-        mImage.src = imgUrl;
-        mImage.style.maxWidth = "60%";
-        mImage.style.height = "auto";
-        mImage.style.width = "auto";
-        mImage.style.cssFloat = "left";
-        var rightDiv = document.createElement("div");
-        rightDiv.style.height = "40px";
-        var itemPara = document.createElement("p");
-        itemPara.innerHTML = '<span>Item:</span>' + itemName + "<br>";
-        var pricePara = document.createElement("p");
-        pricePara.innerHTML = '<span>Price:</span>' + itemPrice + '<br />';
-        var sellerPara = document.createElement("p");
-        sellerPara.innerHTML = '<span>Seller:</span>' + itemSeller;
-        rightDiv.appendChild(itemPara);
-        rightDiv.appendChild(pricePara);
-        rightDiv.appendChild(sellerPara);
-        mOneRecentPostDiv.appendChild(mImage);
-        mOneRecentPostDiv.appendChild(rightDiv);
-        mRecentPostsDiv.appendChild(mOneRecentPostDiv);
-    }
-
-    function setupLinksForButtons() {
-        $('button[name="CategoryButton”]').each($('button[name="CategoryButton"]').click(function () {
-            window.location.href = "specificCategory.html";
-        }));
-        $('h1:first').click(function () {
-            window.location.href = 'index.html';
-        });
-        $('#myAccount').click(function () {
-            window.location.href = 'accountPage.html';
-        }
-
-        $('#makePost').click(function () {
+        $('#makePost').on('click', function () {
             window.location.href = "makePost.html";
+            return;
         });
+        $('#buying').on('click', function (e) {
+            e.preventDefault();
+            window.location.href = "specificCategory.html";
+
+        });
+        $('#selling').on('click', function (e) {
+
+            e.preventDefault(); window.location.href = "specificCategory.html";
+
+        });
+        $('#rides').on('click', function (e) {
+            e.preventDefault();
+            window.location.href = "specificCategory.html";
+
+        });
+        $('#announcement').on('click', function (e) {
+            e.preventDefault();
+            window.location.href = "specificCategory.html";
+
+        });
+        $('#other').on('click', function (e) {
+            e.preventDefault();
+            window.location.href = "specificCategory.html";
+
+        });
+
+        $('#logo').on('click', function (e) {
+            e.preventDefault();
+            window.location.href = "index.html";
+
+        });
+        $.ajax({
+            url: apiUrl,
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data) {
+                    AllPosts = data;
+                    displayPosts(AllPosts);
+                } else {
+                    console.log("Posts not Found");
+                }
+            },
+            error: function (request, status, error) {
+                console.log(error, status, request);
+            }
+        });
+
+
     }
 
 
+    // $(document).ready(function () {
+    //    getAllPosts();
+    //})
     window.onload = setup;
 })();

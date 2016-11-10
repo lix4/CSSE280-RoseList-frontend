@@ -31,25 +31,17 @@ h1 span {
     text-align: center;
 }
 
-input[type="text"] {
-    width: 87%;
- }
-
- input[name="t"] {
+input {
     width: 87%;
     margin-bottom: 10px;
  }
  
-input[name="d"] {
+textarea{
     width: 87%;
     padding-bottom: 50px;
     margin-bottom: 10px;
  }
 
-input[name="p"] {
-    width: 87%;
-    margin-bottom: 10px;
- }
 
 label {
     width: 100px;

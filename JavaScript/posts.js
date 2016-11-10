@@ -1,82 +1,70 @@
-var apiUrl;
-var posts = {};
-var finalPosts = {};
-var category;
+(function () {
+    "use strict";
 
+    var submit, reset;
+    var titl, descriptio, pric, categor, typ;
 
-
-function getPosts() {
+    var apiURL = "http://localhost:3000/posts"
+    var postData = function () {
+        var inputData = {
+            type: typ,
+            category: categor,
+            info: descriptio,
+            name: titl,
+            price: pric
+        };
         $.ajax({
-            url: apiUrl,
-            //check if there is any more specific url extension
-            type: 'GET',
-            dataType: 'JSON',
+            url: apiURL,
+            type: "POST",
+            data: inputData,
             success: function (data) {
-                if (data) {
-                    posts = data;
-                    sortPosts();
-                } else {
-                    console.log("Posts not Found");
-                }
+                window.location.href = "index.html";
+                return;
             },
             error: function (request, status, error) {
                 console.log(error, status, request);
             }
+        })
+    };
+
+
+    function getPost(name)
+
+    function getFormData() {
+        titl = $('#t').val();
+        descriptio = $('#d').val();
+        pric = $('#p').val();
+        categor = $('[name="categories"] option:selected').val();
+        typ = $('[name="type"] option:selected').val();
+        postData();
+    }
+
+
+
+
+    // function resetForm() {
+
+    // }
+
+    function resetData() {
+        $('span').remove();
+    }
+
+    $(document).ready(function () {
+        //load in initial state
+        submit = $("#submit-button").on('click', getFormData);
+        reset = $("#reset").on('click', resetData);
+        $('h1').on('click', function () {
+            window.location.href = "index.html";
+            return;
+        })
+        $('#cancel').on('click', function () {
+            window.location.href = "index.html";
+            return;
+        })
+        $('#logo').on('click', function () {
+            window.location.href = "index.html";
+            return;
         });
-    }
-
-
-function displayPosts(postList) {
-        var postContainer = $('#posts'), post;
-        postContainer.append($('<h4>').text('Posts'));
-        postList.forEach(function (post) {
-            post = $('<blockquote>').append(
-                '<p>' +
-                post.description.name + '<br>' +
-                'Price:' + post.price + '<br>' +
-                'Posted by:' + post.userName
-
-            );
-            postContainer.append(post);
-            post.click(function () {
-                //Add link to the post's own page.'
-            });
-        });
-    }
-
-function sortPosts() {
-    var post;
-    if(category == "All"){
-        displayPosts(posts);
-        return;
-    }
-    posts.forEach(function (post){
-        if(post.category == category){
-            finalPosts.append(post);
-
-        }
-
     });
-    displayPosts(finalPosts);
-}
-
-$(document).ready(function () {
-    if(window.location.href.indexOf("buying") > -1) {
-       category = "Buying";
-    }
-    if(window.location.href.indexOf("selling") > -1) {
-       category = "Selling";
-    }
-    if(window.location.href.indexOf("announcement") > -1) {
-       category = "Announcement";
-    }
-    if(window.location.href.indexOf("other") > -1) {
-       category = "Other";
-    }
-    if(window.location.href.indexOf("personal") > -1) {
-       category = "Personal";
-    }
-    if(window.location.href.indexOf("all") > -1) {
-       category = "All";
-    }
-});
+})();

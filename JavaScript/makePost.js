@@ -2,7 +2,7 @@
     "use strict";
 
     var submit, reset;
-    var titl, descriptio, pric, categor, typ;
+    var titl, descriptio, pric, categor, typ, phon, emai;
 
     var apiURL = "http://localhost:3000/posts"
     var postData = function () {
@@ -11,7 +11,9 @@
             category: categor,
             info: descriptio,
             name: titl,
-            price: pric
+            price: pric,
+            phone: phon,
+            email: emai
         };
         $.ajax({
             url: apiURL,
@@ -33,6 +35,8 @@
         titl = $('#t').val();
         descriptio = $('#d').val();
         pric = $('#p').val();
+        emai = $('#e').val();
+        phon = $('#ph').val();
         categor = $('[name="categories"] option:selected').val();
         typ = $('[name="type"] option:selected').val();
         postData();
@@ -61,5 +65,9 @@
             window.location.href = "index.html";
             return;
         })
+        $('#logo').on('click', function () {
+            window.location.href = "index.html";
+            return;
+        });
     });
 })();

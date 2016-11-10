@@ -6,11 +6,6 @@
 * {
     font-family: "BebasNeue", sans-serif;
 }
-#myAccount{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
 
 #logo {
     display: block;
@@ -31,7 +26,7 @@ table{
     top: 100px;
 }
 
-table input{
+table button{
     width: 200px;
     height: 50px;
     color:white;
@@ -47,6 +42,21 @@ table input{
     cursor: pointer;
 }
 
+table input{
+    width: 200px;
+    height: 50px;
+    color:white;
+    background-color: #800000;
+    border: 1px solid #800000;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    outline: none;
+    cursor: pointer;
+}
 
 #largeContainer{
     width:1600px;
@@ -72,6 +82,7 @@ table input{
     margin-right: 0px;
     padding-left: 0px;
     margin-left: 0px;
+
 }
 
 #middle select{
@@ -82,7 +93,7 @@ table input{
     margin-left: 0px;
 }
 
-#middle button{
+#middle input[type=submit]{
     padding-right: 0px;
     margin-right: 0px;
     padding-left: 0px;
@@ -97,8 +108,26 @@ table input{
     cursor: pointer;
 }
 
+#middle button{
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    text-align: center;
+    background-color: #800000;
+    color: white;
+    border: 2px solid #800000;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 115px;
+    cursor: pointer;
+}
+
+
+
 
 #recent {
+    /*background-color: maroon;*/
     float: left;
     width: 375px;  
     font-size: 12px;
@@ -106,13 +135,14 @@ table input{
     border: 3px solid #800000;
     position: relative;
     top: 60px;
+
 }
 
 p {
     padding: 0px 5px 0px 5px;
     margin: 0px 0px 0px 0px; 
     float: left;
-    overflow: auto;
+  /*  overflow: auto;*/
 }
 
 .firstWord{
@@ -120,29 +150,14 @@ p {
 }
 
 
+#recentPosts div{
+    border: 2px 0px 2px 0px solid  black;
 
-#recent div {
-    border: 2px solid  black;
-    text-align: center;
-    overflow: auto;
-    /*margin-bottom: 4px;*/   
-    /*height: 110px;*/
-    /*width: 300px;*/
-}
-
-#posts{
     display: block;
+    height: 150px;
 }
-
-#posts div{
-    border: 2px solid black;
+#recentPosts h3{
     text-align: center;
-    display: block;
-    width: 33%;
-    overflow: scroll;
-    margin-left: 33%;
-    margin-right: 33%;
-    height: 200px;
 }
 
 #name {
@@ -152,16 +167,26 @@ p {
     margin-right: 33%;
 }
 
-#posts div span{
-    float: right;
-    width: 40%;
-}
 
 #middle{
-    background-color: grey;
+    background-color: black;
     text-align: center;
     height: 40px;
+    border-radius: 10px;
+}
 
+.post {
+    background-color: white;
+    border-top: 1px solid black;
+    text-align: left;
+ 
+}
+.post p {
+    display: inline-block;
+    width: 95%;
+    overflow: hidden;
+    line-height: 3;
+    text-overflow: ellipsis;
 }
 
 #announcements{
@@ -171,25 +196,21 @@ p {
     text-align: center;
     border: 3px solid #800000;
     position: relative;
-    top: 60px;
+    top: 60px;    
+}
+
+.first{
+    font-weight: bold;
 }
 
 #announcements div {
-    border: 2px solid  black;
+    border: 2px 0px 2px 0px solid  black;
+    display: block;
+    height: 150px;
+}
+#announcements h3 {
     text-align: center;
-    overflow: auto;
-    /*margin-bottom: 4px;*/   
-    /*height: 110px;*/
-    /*width: 300px;*/
-}
-
-img{
-    max-width: 60%;
-    /*padding: 5px 5px 5px 5px;*/
-    height: auto;
-    width: auto;
-    float: left;
-}
+    }
 
 .divs{
     float: left;
@@ -203,7 +224,7 @@ select{
     font-size: 20px;
 }
 
-input[type=text], select, #makePost{
+input[type=text], select{
      border: 1px solid #ccc;
      border-radius: 4px;
      box-sizing: border-box;
