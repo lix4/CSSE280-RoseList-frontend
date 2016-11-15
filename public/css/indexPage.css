@@ -26,7 +26,7 @@ table{
     top: 100px;
 }
 
-table button{
+/*table button{
     width: 200px;
     height: 50px;
     color:white;
@@ -40,7 +40,7 @@ table button{
     margin-bottom: 5px;
     outline: none;
     cursor: pointer;
-}
+}*/
 
 table input{
     width: 200px;
@@ -85,6 +85,14 @@ table input{
 
 }
 
+#middle input[type=text]:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+
+
 #middle select{
     width : 109px;
     padding-right: 0px;
@@ -108,7 +116,7 @@ table input{
     cursor: pointer;
 }
 
-#middle button{
+/*#middle button{
     padding-right: 0px;
     margin-right: 0px;
     padding-left: 0px;
@@ -121,9 +129,7 @@ table input{
     font-size: 20px;
     width: 115px;
     cursor: pointer;
-}
-
-
+}*/
 
 
 #recent {
@@ -169,7 +175,7 @@ p {
 
 
 #middle{
-    background-color: black;
+    background-color: grey;
     text-align: center;
     height: 40px;
     border-radius: 10px;
@@ -228,7 +234,31 @@ input[type=text], select{
      border: 1px solid #ccc;
      border-radius: 4px;
      box-sizing: border-box;
-         height: 30px;
-         align-items: baseline;
-    margin-top: 5px;
+     height: 30px;
+     align-items: baseline;
+     margin-top: 5px;
+}
+
+form > button{
+ background-color: #800000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+table button{
+    background-color: #800000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+}
+
+button:hover{
+background-color: #45a049;
 }

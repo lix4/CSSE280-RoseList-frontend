@@ -14,7 +14,6 @@
         });
     }
 
-
     function getComment() {
         comment = $('#response').val();
         if (!comment) {
@@ -59,7 +58,7 @@
 
     }
 
-
+    
     function loadPost() {
         var descDiv = $('#descriptionDiv');
         $.ajax({

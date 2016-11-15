@@ -7,31 +7,35 @@
     var apiUrl = "https://roselist-backend-test.herokuapp.com/posts";
 
     var getPosts = function () {
-        var inputData = {
-            name: userInput.replace(/ /g, "+"),
-            category: searchType
-        };
-        $.ajax({
-            url: apiUrl,
-            type: "GET",
-            data: inputData,
-            success: function (data) {
-                data = data.filter(function getMyPost(obj) {
-                    return userInput === obj.name;
-                });
-                data = data[0];
-                if (data) {
-                    console.log(data.name);
-                    displayPosts(data);
-                } else {
-                    console.log("Posts not Found");
-                    alert("Sorry, we can't find this post......");
+        if (userInput === "") {
+            alert("The content is empty!");
+        } else {
+            var inputData = {
+                name: userInput.replace(/ /g, "+"),
+                category: searchType
+            };
+            $.ajax({
+                url: apiUrl,
+                type: "GET",
+                data: inputData,
+                success: function (data) {
+                    data = data.filter(function getMyPost(obj) {
+                        return userInput === obj.name;
+                    });
+                    data = data[0];
+                    if (data) {
+                        console.log(data.name);
+                        displayPosts(data);
+                    } else {
+                        console.log("Posts not Found");
+                        alert("Sorry, we can't find this post......");
+                    }
+                },
+                fail: function (request, status, error) {
+                    console.log(error, status, request);
                 }
-            },
-            fail: function (request, status, error) {
-                console.log(error, status, request);
-            }
-        });
+            });
+        };
     };
 
 
@@ -46,7 +50,7 @@
 
     function getFormData() {
         searchType = $("[name=categories] option:selected").val();
-        userInput = $("[name=search]").val();
+        userInput = $("#searchInput").val();
         getPosts();
     }
 

@@ -82,12 +82,14 @@ input{
 }
 
 form > button{
-    background-color: green;
+   background-color: #800000;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 40px;
-    
+    font-size: 20px;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
 }
 
 form > button:hover{
@@ -109,5 +111,6 @@ form > button:hover{
 
 input {
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
